@@ -1,0 +1,9 @@
+Package: util
+Type: Package
+Title: Utilities for ecological data management and analyses
+Version: 1.0
+Date: 2018-05-04
+Author: Bottin, Marius
+Maintainer: <m.bottin_pro@yahoo.com>
+Description:  All the main functions I use for transforming my data tables, and formatting ecological results
+License: GNU General Public License v3.0
