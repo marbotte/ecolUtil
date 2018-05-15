@@ -1,4 +1,4 @@
-Package: util
+Package: ecolUtil
 Type: Package
 Title: Utilities for ecological data management and analyses
 Version: 1.0
