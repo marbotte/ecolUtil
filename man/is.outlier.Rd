@@ -20,7 +20,7 @@ is.outlier(x, fac = 3)
 }
 \details{
 				The formula used is the following
-				\deqn{x>M+(fac\times{IQ}}
+				\deqn{x>M+(fac\times{IQ})}
 				OR
 				\deqn{x>M-(fac\times{IQ})}
 				Where M is the median of x and IQ the interquartile distance.
@@ -32,5 +32,8 @@ is.outlier(x, fac = 3)
 				Bottin, Marius
 }
 \examples{
-
+(A<-rnorm(100))
+is.outlier(A)
+}
 \keyword{ distribution }% use one of  RShowDoc("KEYWORDS")
+
