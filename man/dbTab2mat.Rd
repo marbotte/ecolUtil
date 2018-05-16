@@ -3,7 +3,7 @@
 \title{Transform a checklist of species into a matrix of presences or abundances of species}
 \description{The function }
 \usage{
-dbTab2mat(dbTab, col_samplingUnits = "SU", col_species = "sp", col_content = "abundance", empty = NA)
+dbTab2mat(dbTab,col_samplingUnits="SU",col_species="sp",col_content="abundance",empty=NA,checklist=F)
 }
 \arguments{
   \item{dbTab}{data.frame containing the data}
@@ -11,9 +11,10 @@ dbTab2mat(dbTab, col_samplingUnits = "SU", col_species = "sp", col_content = "ab
   \item{col_species}{name of the column of dbTab which contains the species names}
   \item{col_content}{name of the column of dbTab which contains the presence, abundance or any content that we want to fill the matrix}
   \item{empty}{Value used to fill the matrix when the couple Sampling unit / species is not given in dbTab (absences of the species). If NA, the value is deduced from the mode of the col_content column}
+  \item{checklist}{True when there is actually no col_content, and that dbTab is only a checklist of species occurrences}
 }
 \value{
-A table sampling units/species with presences or abundances of the species
+A table sampling units/species with presences or abundances of the species. Note that if checklist is TRUE, then the result will be a logical matrix, that takes less memory space. Note that mutiplicating
 }
 \author{Bottin, Marius}
 \seealso{
