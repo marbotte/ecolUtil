@@ -62,8 +62,9 @@ I is the identity matrix
 \examples{
 data(mixedTie)
 P<-N<-mixedTie
-P<-P[P>0]
-N<-abs(N[N<0])
+P[P<=0]<-0
+N[N>=0]<-0
+N<-abs(N)
 pnCentrality(P,N)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
