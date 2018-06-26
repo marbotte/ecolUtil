@@ -1,15 +1,16 @@
 \name{pnCentrality}
 \alias{pnCentrality}
+\alias{pnCentrality_val}
 \title{
-				Calculate the PN centrality of a non-valued network.
+				Calculate the PN centrality of a non-valued or valued network.
 }
 \description{
 				The PN centrality is a measure of centrality that takes into account the negative ties in a network
 }
 \usage{
 pnCentrality(posit, negat)
+pnCentrality_val(posit,negat,fac_beta=max(c(posit,negat))*2)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{posit}{
 The adjacency matrix representing the positive relationships in a network.
@@ -32,6 +33,11 @@ N is the negative tie matrix
 n is the number of vertices
 
 I is the identity matrix
+
+
+The formula we derivate from it for valued PN centrality is \deqn{PN=(I-\frac{1}{2fn-2f}A)^{-1}\boldsymbol{1}}{PN=(I-\frac{1}{fn-f}A)^{-1}*1}}
+
+Where f is the maximal value in the network (we estimate here that the positive maximal value is equivalent to the absolute value of the negative 
 }
 \value{
 				Returns a vector of PN centrality values (the length of the vector corresponds to the number of vertices)
@@ -51,13 +57,11 @@ I is the identity matrix
 				Bottin, Marius
 }
 \note{
-%%  ~~further notes~~
+The function for the valued networks is experimental and has not been tested sufficiently with classical example. Use at tour own risk!
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
 data(mixedTie)
@@ -67,6 +71,4 @@ N[N>=0]<-0
 N<-abs(N)
 pnCentrality(P,N)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ graphs }% use one of  RShowDoc("KEYWORDS")
+\keyword{ graphs }
